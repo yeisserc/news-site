@@ -1,0 +1,16 @@
+version: "3"
+
+services:
+  news-admin:
+    container_name: news-admin
+    restart: always
+    build: .
+    ports:
+      - 8080:80
+    dns:
+      - 8.8.8.8
+    networks:
+      - news-admin-network
+networks:
+  news-admin-network:
+    driver: bridge
